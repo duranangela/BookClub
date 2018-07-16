@@ -3,5 +3,5 @@
 <h3>See a list of books by:</h3>
 
 <% @authors.each do |author| %>
-  <p><%= author.name %></p>
+  <p><%= link_to author.name, author_path(author) %></p>
 <% end %>
