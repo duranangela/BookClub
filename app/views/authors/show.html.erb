@@ -1,5 +1,7 @@
 <h2><%= @author.name %></h2>
 
+<p><%= link_to "Create a New Book by #{@author.name}", new_author_book_path(@author) %></p>
+
 <% @author.books.each do |book| %>
   <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
   <p><%= link_to book.title, author_book_path(@author, book) %></p><br>
