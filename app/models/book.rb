@@ -4,4 +4,8 @@ class Book < ApplicationRecord
 
   validates_presence_of :title, :year, :image
 
+  def self.alpha_order
+    order('title ASC')
+  end
+
 end
