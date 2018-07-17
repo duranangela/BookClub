@@ -1,3 +1,5 @@
 <h2><%= @author.name %></h2>
 
+
+<p><%= link_to 'Edit Author', edit_author_path(@author) %>
 <p><%= link_to "Delete Author", author_path(@author), method: 'delete' %>
