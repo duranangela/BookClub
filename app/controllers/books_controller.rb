@@ -23,6 +23,22 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit
+    @book = Book.find(params[:id])
+    @author = Author.find(params[:author_id])
+  end
+
+  def update
+    @author = Author.find(params[:author_id])
+    @book = @author.books.find(params[:id])
+    @book.update(book_params)
+    if @book.save
+      redirect_to author_book_path(@author, @book)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def book_params
