@@ -1,0 +1,7 @@
+<h1>All Books</h1>
+
+<% @books.each do |book| %>
+  <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
+  <p><%= link_to book.title, author_book_path(book.author, book) %></p>
+  <p><%= link_to book.author.name, author_path(book.author) %></p><br><br>
+<% end %>

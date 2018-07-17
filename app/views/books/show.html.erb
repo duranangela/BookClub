@@ -1,0 +1,6 @@
+<%= image_tag(@book.image, size: '100x150', alt: 'not_available.png') %>
+<h2><%= @book.title %>, <%= @book.year %></h2>
+<p><%= link_to "See all books by #{@book.author.name}", author_path(@book.author) %></p><br>
+
+<p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
+<p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p>
