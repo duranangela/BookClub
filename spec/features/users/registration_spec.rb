@@ -10,7 +10,7 @@ describe 'registration workflow' do
 
     visit '/'
 
-    click_on 'Sign up to be a New User'
+    click_on 'Sign up to be a Member'
 
     expect(current_path).to eq(new_user_path)
 
