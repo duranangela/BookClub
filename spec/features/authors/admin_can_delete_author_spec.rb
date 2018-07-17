@@ -16,7 +16,7 @@ describe 'only admin can delete author' do
       expect(page).to_not have_content(author1.name)
     end
   end
-  context 'as default user' do
+  context 'as default user or visitor' do
     it 'cannot see delete link' do
       author1 = Author.create(name: 'Orson Card')
       user = User.create(username: 'fred', password: '12345')

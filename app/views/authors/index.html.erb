@@ -1,6 +1,9 @@
 <h1>All Authors</h1>
 
-<p><%= link_to 'Create a New Author', new_author_path %></p>
+<% if current_user && current_admin? %>
+  <p><%= link_to 'Create a New Author', new_author_path %></p>
+<% end %>
+
 <h3>See a list of books by:</h3>
 
 <% @authors.each do |author| %>

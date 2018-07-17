@@ -8,8 +8,13 @@ describe 'only admin can create author' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit new_author_path
+      visit authors_path
 
+      expect(page).to have_content("Create a New Author")
+
+      click_on "Create a New Author"
+
+      expect(current_path).to eq(new_author_path)
       expect(page).to have_content("Create a New Author")
 
       fill_in :author_name, with: author
@@ -19,15 +24,19 @@ describe 'only admin can create author' do
       expect(page).to have_content(author)
     end
   end
-  context 'as default user' do
+  context 'as default user or visitor' do
     it 'cannot see page' do
       user = User.create(username: 'fred', password: '12345')
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit new_author_path
+      visit authors_path
 
       expect(page).to_not have_content("Create a New Author")
+
+      visit new_author_path
+
+      expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
 end
