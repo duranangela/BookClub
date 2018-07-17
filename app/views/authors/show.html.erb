@@ -4,7 +4,7 @@
   <p><%= link_to "Create a New Book by #{@author.name}", new_author_book_path(@author) %></p>
   <p><%= link_to 'Edit Author', edit_author_path(@author) %>
   <p><%= link_to "Delete Author", author_path(@author), method: 'delete' %>
-<% end %>
+<% end %> <br><br>
 
 <% @books.each do |book| %>
   <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
