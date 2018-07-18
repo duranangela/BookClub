@@ -6,3 +6,8 @@
   <p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
   <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p>
 <% end %>
+
+<% @reviews.each do |review| %>
+  <p>Rating: <%= review.rating %></p>
+  <p>Comment: <%= review.comment %></p>
+<% end %>
