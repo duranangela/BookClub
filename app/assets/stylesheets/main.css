@@ -28,11 +28,14 @@ header img {
   float: left;
 }
 
-header h1 {
+#header a{
   float: right;
   color: white;
   padding-right: 20px;
+}
 
+#header a:hover {
+  color: #C5FFC7;
 }
 
 nav {
@@ -49,6 +52,23 @@ nav h3 {
 section {
   background-color: #C5FFC7;
   padding: 30px;
+}
+
+.welcome1 img {
+  float: left;
+}
+
+.welcome1 h3 {
+  float: center;
+  padding-top: 30px;
+}
+
+.welcome2 h3 {
+  /* float: left; */
+}
+
+.welcome2 img {
+  float: right;
 }
 
 .title {

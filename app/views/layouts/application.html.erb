@@ -12,14 +12,14 @@
   <body>
     <header>
       <%= image_tag('bookshelf.jpg', size: '300x125') %>
-      <h1>BookClub</h1>
+      <h1 id='header'><%= link_to 'BookClub', root_path %></h1>
     </header>
     <nav>
       <h3><%= link_to 'See All Authors', authors_path %></h3>
       <h3><%= link_to 'See All Books', books_path %></h3>
       <% if current_user %>
-        <h3>Signed in as <%= current_user.username %></h3>
-        <h3><%= link_to 'See your reviews', user_path(current_user) %></h3>
+        <!-- <h3>Signed in as <%= current_user.username %></h3> -->
+        <h3><%= link_to "See reviews by #{current_user.username}", user_path(current_user) %></h3>
         <h3><%= link_to 'Log Out', logout_path %></h3>
       <% else %>
         <h3><%= link_to 'Sign up to be a Member', new_user_path %></h3>
