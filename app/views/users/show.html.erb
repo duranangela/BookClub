@@ -7,7 +7,7 @@
     <p><%= "Your review of #{review.book.title}:" %></p>
     <p>Rating: <%= review.rating %></p>
     <p>Comment: <%= review.comment %></p>
-    <p>Created_at: <%= review.created_at %></p>
+    <p>Created at: <%= review.created_at.strftime('%m-%e-%y %H:%M') %></p>
     <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
     <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
   <% end %>
