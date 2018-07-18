@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :reviews, except: [:index]
   end
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show] do
+    resources :suggestions
+  end
 end
