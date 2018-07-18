@@ -9,6 +9,7 @@ describe User, type: :model do
   describe 'relationships' do
     it {should have_many(:reviews)}
     it {should have_many(:books).through(:reviews)}
+    it {should have_many(:suggestions)}
   end
   describe "roles" do
     it "can be created as an admin" do
