@@ -17,7 +17,7 @@
   <p>Rating: <%= review.rating %></p>
   <p>Comment: <%= review.comment %></p>
   <p>By: <%= review.user.username %></p>
-  <p><%= review.created_at.strftime('%m-%e-%y %H:%M') %></p>
+  <p><%= review.time %></p>
   <% if current_user && current_admin? %>
     <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
     <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>
