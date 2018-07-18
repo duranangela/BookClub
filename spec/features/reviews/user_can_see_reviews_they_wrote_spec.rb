@@ -15,10 +15,10 @@ describe 'user can see reviews they wrote' do
     expect(page).to have_content(review1.book.title)
     expect(page).to have_content(review1.rating)
     expect(page).to have_content(review1.comment)
-    expect(page).to have_content(review1.created_at)
+    expect(page).to have_content(review1.time)
     expect(page).to have_content(review2.book.title)
     expect(page).to have_content(review2.rating)
     expect(page).to have_content(review2.comment)
-    expect(page).to have_content(review2.created_at)
+    expect(page).to have_content(review2.time)
   end
 end

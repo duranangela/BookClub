@@ -1,12 +1,18 @@
-<h2><%= @author.name %></h2>
+<section>
+  <h2>Books by <%= @author.name %></h2>
 
-<% if current_user && current_admin? %>
-  <p><%= link_to "Create a New Book by #{@author.name}", new_author_book_path(@author) %></p>
-  <p><%= link_to 'Edit Author', edit_author_path(@author) %>
-  <p><%= link_to "Delete Author", author_path(@author), method: 'delete' %>
-<% end %> <br><br>
+  <% if current_user && current_admin? %>
+    <p><%= link_to "Create a New Book by #{@author.name}", new_author_book_path(@author) %></p>
+    <p><%= link_to 'Edit Author', edit_author_path(@author) %>
+    <p><%= link_to "Delete Author", author_path(@author), method: 'delete' %>
+  <% end %> <br><br>
 
-<% @books.each do |book| %>
-  <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
-  <p><%= link_to book.title, author_book_path(@author, book) %></p><br>
-<% end %>
+  <div class='grid'>
+    <% @books.each do |book| %>
+      <div class='grid-items'>
+        <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
+        <h3><%= link_to book.title, author_book_path(@author, book) %></h3><br>
+      </div>
+    <% end %>
+  </div>
+</section>

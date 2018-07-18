@@ -1,10 +1,14 @@
-<h1>All Books</h1>
+<section>
+  <h1 class='title'>All Books</h1>
 
-<% @books.each do |book| %>
-  <%= image_tag(book.image, size: '100x150', alt: 'not_available.png') %>
-  <% if book.avg_rating != nil %>
-    <p>Average Rating: <%= book.avg_rating %></p>
+  <% @books.each do |book| %>
+    <div class='book'>
+      <%= image_tag(book.image, size: '125x175', alt: 'not_available.png') %>
+      <h2><%= link_to book.title, author_book_path(book.author, book) %></h2>
+      <h3>by <%= link_to book.author.name, author_path(book.author) %></h3>
+      <% if book.avg_rating != nil %>
+        <h3>Average Rating: <%= book.avg_rating %></h3>
+      <% end %>
+    </div>
   <% end %>
-  <p><%= link_to book.title, author_book_path(book.author, book) %></p>
-  <p><%= link_to book.author.name, author_path(book.author) %></p><br><br>
-<% end %>
+</section>

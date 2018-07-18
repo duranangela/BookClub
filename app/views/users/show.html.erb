@@ -1,17 +1,20 @@
-<% if current_user %>
-  <h1>Welcome, <%= current_user.username %>!</h1>
+<section>
+  <% if current_user %>
+    <h1 class='title'>Welcome, <%= current_user.username %>!</h1>
 
-  <h3>Your reviews:</h3>
+    <div class='reviews'>
+      <h2>Your reviews:</h2><br>
+      <% @reviews.each do |review| %>
+        <h3>Your review of <%= link_to review.book.title, author_book_path(review.book.author, review.book) %>: </h3>
+        <h3>Rating: <%= review.rating %></h3>
+        <h3>Comment: <%= review.comment %></h3>
+        <h3>Created at: <%= review.time %></h3>
+        <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
+        <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
+      <% end %>
+    </div>
 
-  <% @reviews.each do |review| %>
-    <p><%= "Your review of #{review.book.title}:" %></p>
-    <p>Rating: <%= review.rating %></p>
-    <p>Comment: <%= review.comment %></p>
-    <p>Created at: <%= review.created_at.strftime('%m-%e-%y %H:%M') %></p>
-    <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
-    <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
+  <% else %>
+    <%= render file:'/public/404' %>
   <% end %>
-
-<% else %>
-  <%= render file:'/public/404' %>
-<% end %>
+</section>

@@ -1,6 +1,8 @@
-<% if current_user && current_admin? %>
-  <h2>Edit a Book by <%= @author.name %></h2>
-  <%= render partial: 'form' %>
+<section>
+  <% if current_user && current_admin? %>
+    <h2 class='title'>Edit a Book by <%= @author.name %></h2>
+    <%= render partial: 'form' %>
   <% else %>
-    <%= render file:'/public/404' %>
+      <%= render file:'/public/404' %>
   <% end %>
+</section>

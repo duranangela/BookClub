@@ -1,0 +1,96 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #3C7F3E;
+}
+
+
+header {
+  background-color: #3C7F3E;
+  background-image: url('bookshelf.jpg');
+  background-repeat: no-repeat;
+  background-size: 300px;
+  font-size: 20px;
+  padding-right: 20px;
+  color: white;
+}
+
+header h1 {
+  float: right;
+}
+
+nav {
+  background-color: #9ECC9F;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: auto;
+}
+
+nav h3 {
+  text-align: center;
+}
+
+section {
+  background-color: #C5FFC7;
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.book {
+  height: 225px;
+  margin-left: 25%;
+}
+
+.book img {
+  float: left;
+  padding-right: 20px;
+}
+
+.reviews {
+  margin-left: 25%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: space-between;
+}
+
+.form input {
+  height: 20px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.form input[type=submit] {
+  background-color: #3C7F3E;
+  color: white;
+}
+
+.form input[type=submit]:hover {
+  background-color: #9ECC9F;
+}
