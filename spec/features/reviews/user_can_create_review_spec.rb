@@ -24,4 +24,16 @@ describe 'only user can create new review' do
       expect(page).to have_content(comment)
     end
   end
+  context 'as visitor' do
+    it 'cannot see page' do
+      author = Author.create(name: 'Card, Orson Scott')
+      book = author.books.create(title: "Ender's Game", year: 1985, image: "Ender's_game.jpg")
+
+      visit author_book_path(author, book)
+      expect(page).to_not have_content('Create Review')
+
+      visit new_book_review_path(book)
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
 end
