@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_secure_password
 
   enum role: ['default', 'admin']
+
+  def order_reviews
+    reviews.order('created_at DESC')
+  end
 end

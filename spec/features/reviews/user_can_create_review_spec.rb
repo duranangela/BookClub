@@ -15,7 +15,7 @@ describe 'only user can create new review' do
       click_on 'Write a Review'
 
       expect(current_path).to eq(new_book_review_path(book))
-      fill_in :review_rating, with: rating
+      select rating, from: :review_rating
       fill_in :review_comment, with: comment
       click_on 'Create Review'
 

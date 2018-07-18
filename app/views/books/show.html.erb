@@ -1,7 +1,9 @@
 <%= image_tag(@book.image, size: '100x150', alt: 'not_available.png') %>
+<% if @book.avg_rating != nil %>
+  <h2>Average Rating: <%= @book.avg_rating %></h2>
+<% end %>
 <h2><%= @book.title %> - <%= @book.year %></h2>
 <p><%= link_to "See all books by #{@book.author.name}", author_path(@book.author) %></p><br>
-
 <% if current_user && current_admin? %>
   <p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
   <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p><br>
@@ -15,7 +17,7 @@
   <p>Rating: <%= review.rating %></p>
   <p>Comment: <%= review.comment %></p>
   <p>By: <%= review.user.username %></p>
-  <p><%= review.created_at %></p>
+  <p><%= review.created_at.strftime('%m-%e-%y %H:%M') %></p>
   <% if current_user && current_admin? %>
     <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
     <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>

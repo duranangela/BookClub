@@ -17,7 +17,7 @@ describe 'edit reviews' do
       click_on 'Edit Review'
 
       expect(current_path).to eq(edit_book_review_path(book, review1))
-      fill_in :review_rating, with: rating
+      select rating, from: :review_rating
       fill_in :review_comment, with: comment
       click_on 'Update Review'
 
@@ -53,7 +53,7 @@ describe 'edit reviews' do
       click_on 'Edit Review'
 
       expect(current_path).to eq(edit_book_review_path(book, review1))
-      fill_in :review_rating, with: rating
+      select rating, from: :review_rating
       fill_in :review_comment, with: comment
       click_on 'Update Review'
 
