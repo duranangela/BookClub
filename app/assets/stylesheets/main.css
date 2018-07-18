@@ -2,6 +2,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr;
+  font-family: 'Cagliostro'
 }
 
 a {
@@ -17,19 +18,21 @@ a:hover {
   color: #3C7F3E;
 }
 
-
 header {
   background-color: #3C7F3E;
-  background-image: url('bookshelf.jpg');
-  background-repeat: no-repeat;
-  background-size: 300px;
-  font-size: 20px;
-  padding-right: 20px;
-  color: white;
+  font-size: 24px;
+  font-family: 'Berkshire Swash';
+}
+
+header img {
+  float: left;
 }
 
 header h1 {
   float: right;
+  color: white;
+  padding-right: 20px;
+
 }
 
 nav {
@@ -66,6 +69,10 @@ section {
 .book img {
   float: left;
   padding-right: 20px;
+}
+
+.authors {
+  text-align: center;
 }
 
 .reviews {

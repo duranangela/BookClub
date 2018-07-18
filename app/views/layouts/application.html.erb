@@ -3,13 +3,15 @@
   <head>
     <title>BookClub</title>
     <%= csrf_meta_tags %>
-
+    <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet'>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <header>
+      <%= image_tag('bookshelf.jpg', size: '300x125') %>
       <h1>BookClub</h1>
     </header>
     <nav>
@@ -26,6 +28,6 @@
     </nav>
 
     <%= yield %>
-    
+
   </body>
 </html>
