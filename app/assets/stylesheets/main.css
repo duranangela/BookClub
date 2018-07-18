@@ -6,6 +6,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -13,12 +14,12 @@ a:visited {
 }
 
 a:hover {
-  color: #327F58;
+  color: #3C7F3E;
 }
 
 
 header {
-  background-color: #327F58;
+  background-color: #3C7F3E;
   background-image: url('bookshelf.jpg');
   background-repeat: no-repeat;
   background-size: 300px;
@@ -32,7 +33,7 @@ header h1 {
 }
 
 nav {
-  background-color: #8ECCAC;
+  background-color: #9ECC9F;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-template-rows: auto;
@@ -43,12 +44,32 @@ nav h3 {
 }
 
 section {
-  background-color: #B1FFD8;
+  background-color: #C5FFC7;
   padding: 30px;
 }
 
 .title {
   text-align: center;
+  font-size: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.book {
+  height: 225px;
+  margin-left: 25%;
+}
+
+.book img {
+  float: left;
+  padding-right: 20px;
+}
+
+.reviews {
+  margin-left: 25%;
 }
 
 .form {
@@ -66,10 +87,10 @@ section {
 }
 
 .form input[type=submit] {
-  background-color: #327F58;
+  background-color: #3C7F3E;
   color: white;
 }
 
 .form input[type=submit]:hover {
-  background-color: #8ECCAC;
+  background-color: #9ECC9F;
 }
