@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'visitor sees info on book show page' do
+describe 'visitor visits book show page' do
   it 'sees book title, year, image, and author' do
     author1 = Author.create(name: 'Orson Scott Card')
     book1 = author1.books.create(title: "Ender's Game", year: 1985, image: "Ender's_game.jpg")

@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user1 = User.create(username: 'jorj', password: 'password', role: 1)
+user2 = User.create(username: 'Angela', password: '12345')
+user3 = User.create(username: 'Carlos', password: '12345')
+
 author1 = Author.create(name: 'Card, Orson Scott')
 author2 = Author.create(name: 'Tepper, Sherri S.')
 author3 = Author.create(name: 'King, Stephen')
@@ -16,3 +20,8 @@ author2.books.create(title: "Awakeners, The", year: 1987, image: "The_Awakeners.
 author3.books.create(title: "Shining, The", year: 1977, image: "The_Shining.jpg")
 author3.books.create(title: "Stand, The", year: 1978, image: "The_Stand.jpg")
 author3.books.create(title: "Carrie", year: 1974, image: "Carrie.jpg")
+
+user2.reviews.create(rating: 5, comment: 'Excellent!', book_id: 1)
+user3.reviews.create(rating: 4, comment: 'Pretty Good!', book_id: 1)
+user2.reviews.create(rating: 4, comment: 'Really interesting', book_id: 2)
+user3.reviews.create(rating: 4, comment: 'I liked it', book_id: 2)

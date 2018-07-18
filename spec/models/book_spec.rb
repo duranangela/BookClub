@@ -8,6 +8,8 @@ describe Book, type: :model do
   end
   describe 'relationships' do
     it {should belong_to(:author)}
+    it {should have_many(:reviews)}
+    it {should have_many(:users).through(:reviews)}
   end
   describe 'class methods' do
     it 'puts books in alphabetical order by title' do
