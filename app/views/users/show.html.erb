@@ -6,11 +6,13 @@
       <div>
         <% @reviews.each do |review| %>
           <h3>Your review of <%= link_to review.book.title, author_book_path(review.book.author, review.book) %>: </h3>
-          <h3>Rating: <%= review.rating %></h3>
-          <h3>Comment: <%= review.comment %></h3>
-          <h3>Created at: <%= review.time %></h3>
-          <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
-          <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
+          Rating: <%= review.rating %><br>
+          Comment: <%= review.comment %></br>
+          Created at: <%= review.time %></br>
+          <div class='links'>
+            <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
+            <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
+          </div>
         <% end %>
       </div>
 
@@ -18,10 +20,10 @@
         <h2><%= link_to 'Make a Book Suggestion', new_user_suggestion_path(current_user) %></h2>
         <h3>Your Suggestions:</h3>
         <% @suggestions.each do |suggestion| %>
-          <h3>Author: <%= suggestion.author %></h3>
-          <h3>Title: <%= suggestion.title %></h3>
-          <h3>Rating: <%= suggestion.rating %></h3>
-          <h3>Comment: <%= suggestion.comment %></h3><br>
+          Author: <%= suggestion.author %></br>
+          Title: <%= suggestion.title %></br>
+          Rating: <%= suggestion.rating %></br>
+          Comment: <%= suggestion.comment %></br><br>
         <% end %>
       </div>
     </div>

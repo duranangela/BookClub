@@ -20,10 +20,10 @@
   <div class='reviews'>
     <h3>Reviews (Sign in to leave a review!)</h3>
     <% @reviews.each do |review| %>
-      <p>Rating: <%= review.rating %></p>
-      <p>Comment: <%= review.comment %></p>
-      <p>By: <%= review.user.username %></p>
-      <p><%= review.time %></p>
+      Rating: <%= review.rating %></br>
+      Comment: <%= review.comment %></br>
+      By: <%= review.user.username %></br>
+      <%= review.time %></br>
       <% if current_user && current_admin? %>
         <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
         <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>
