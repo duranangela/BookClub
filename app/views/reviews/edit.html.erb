@@ -1,6 +1,6 @@
 <section>
   <% if current_user %>
-    <h2>Edit <%= current_user.username %>'s Review of <%= @book.title %></h2>
+    <h2 class='title'>Edit <%= current_user.username %>'s Review of <%= @book.title %></h2>
     <%= render partial: 'form' %>
   <% else %>
     <%= render file:'/public/404' %>

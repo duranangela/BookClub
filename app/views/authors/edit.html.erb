@@ -1,6 +1,6 @@
 <section>
   <% if current_user && current_admin? %>
-    <h2>Edit Author</h2>
+    <h2 class='title'>Edit Author</h2>
     <%= render partial: 'form' %>
   <% else %>
     <%= render file:'/public/404' %>

@@ -13,16 +13,18 @@ a:visited {
 }
 
 a:hover {
-  color: blue;
+  color: #327F58;
 }
 
 
 header {
+  background-color: #327F58;
   background-image: url('bookshelf.jpg');
   background-repeat: no-repeat;
   background-size: 300px;
   font-size: 20px;
   padding-right: 20px;
+  color: white;
 }
 
 header h1 {
@@ -30,7 +32,7 @@ header h1 {
 }
 
 nav {
-  background-color: lightcyan;
+  background-color: #8ECCAC;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-template-rows: auto;
@@ -41,6 +43,33 @@ nav h3 {
 }
 
 section {
-  background-color: lightyellow;
+  background-color: #B1FFD8;
   padding: 30px;
+}
+
+.title {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: space-between;
+}
+
+.form input {
+  height: 20px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.form input[type=submit] {
+  background-color: #327F58;
+  color: white;
+}
+
+.form input[type=submit]:hover {
+  background-color: #8ECCAC;
 }

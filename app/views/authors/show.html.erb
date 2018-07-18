@@ -1,5 +1,5 @@
 <section>
-  <h2><%= @author.name %></h2>
+  <h2>Books by <%= @author.name %></h2>
 
   <% if current_user && current_admin? %>
     <p><%= link_to "Create a New Book by #{@author.name}", new_author_book_path(@author) %></p>
