@@ -18,5 +18,6 @@
   <p><%= review.created_at %></p>
   <% if current_user && current_admin? %>
     <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
+    <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>
   <% end %><br>
 <% end %>
