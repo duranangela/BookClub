@@ -13,4 +13,8 @@ class Book < ApplicationRecord
   def avg_rating
     reviews.average(:rating)
   end
+
+  def order_reviews
+    reviews.order('created_at DESC')
+  end
 end
