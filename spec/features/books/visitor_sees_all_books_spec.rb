@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'user visits book index page' do
+describe 'visitor visits book index page' do
   it 'sees a list of all books, with links to show pages' do
     author1 = Author.create(name: 'Orson Scott Card')
     author2 = Author.create(name: 'Sherri S. Tepper')
