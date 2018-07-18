@@ -5,7 +5,7 @@ describe 'login workflow' do
     user = User.create(username: 'Ian', password: 'test')
 
     visit '/'
-    click_on 'I already have an account'
+    click_on 'Member Log In'
     expect(current_path).to eq(login_path)
 
     fill_in :username, with: user.username
@@ -22,7 +22,7 @@ describe 'login workflow' do
     user = User.create(username: 'Kee-gan', password: 'test')
 
     visit '/'
-    click_on 'I already have an account'
+    click_on 'Member Log In'
     expect(current_path).to eq(login_path)
 
     fill_in :username, with: user.username
@@ -30,8 +30,8 @@ describe 'login workflow' do
 
     click_on 'Log In'
     click_on 'Log Out'
-    
+
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("I already have an account")
+    expect(page).to have_content("Member Log In")
   end
 end
