@@ -22,4 +22,17 @@ describe Book, type: :model do
       expect(Book.alpha_order).to eq(expected)
     end
   end
+  describe 'instance methods' do
+    it 'gives average rating for book' do
+      user = User.create(username: 'Angela', password: '12345')
+      author = Author.create(name: 'Card, Orson Scott')
+      book = author.books.create(title: "Ender's Game", year: 1985, image: "Ender's_game.jpg")
+      review1 = user.reviews.create(rating: 5, comment: 'Excellent!', book_id: book.id)
+      review2 = user.reviews.create(rating: 3, comment: 'Pretty Good!', book_id: book.id)
+
+      expected = 4
+
+      expect(book.avg_rating).to eq(expected)
+    end
+  end
 end
