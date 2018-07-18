@@ -1,12 +1,14 @@
-<%= form_for [@author, @book] do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<section>
+  <%= form_for [@author, @book] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <%= f.label :year %>
-  <%= f.number_field :year %>
+    <%= f.label :year %>
+    <%= f.number_field :year %>
 
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
+</section>

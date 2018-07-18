@@ -1,6 +1,8 @@
-<% if current_user %>
-  <h2><%= current_user.username %>'s New Review of <%= @book.title %></h2>
-  <%= render partial: 'form' %>
-<% else %>
-  <%= render file:'/public/404' %>
-<% end %>
+<section>
+  <% if current_user %>
+    <h2><%= current_user.username %>'s New Review of <%= @book.title %></h2>
+    <%= render partial: 'form' %>
+  <% else %>
+    <%= render file:'/public/404' %>
+  <% end %>
+</section>
