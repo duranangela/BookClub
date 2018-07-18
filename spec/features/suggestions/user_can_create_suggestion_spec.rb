@@ -27,5 +27,5 @@ describe 'only user can create suggestion' do
       expect(page).to have_content(rating)
       expect(page).to have_content(comment)
     end
-   end
+  end
 end
