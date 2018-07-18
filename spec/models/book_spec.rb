@@ -34,5 +34,16 @@ describe Book, type: :model do
 
       expect(book.avg_rating).to eq(expected)
     end
+    it 'orders reviews by latest first' do
+      user = User.create(username: 'Angela', password: '12345')
+      author = Author.create(name: 'Card, Orson Scott')
+      book = author.books.create(title: "Ender's Game", year: 1985, image: "Ender's_game.jpg")
+      review1 = user.reviews.create(rating: 5, comment: 'Excellent!', book_id: book.id)
+      review2 = user.reviews.create(rating: 3, comment: 'Pretty Good!', book_id: book.id)
+
+      expected = [review2, review1]
+
+      expect(book.order_reviews).to eq(expected)
+    end
   end
 end
