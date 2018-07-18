@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  grid-template-rows: 200px, 200px, auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+
+header {
+  background-image: url('bookshelf.jpg');
+  background-repeat: no-repeat;
+  background-size: 300px;
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+header h1 {
+  float: right;
+}
+
+nav {
+  background-color: lightcyan;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: auto;
+}
+
+nav h3 {
+  text-align: center;
+}
+
+section {
+  background-color: lightyellow;
+  padding: 30px;
+}
