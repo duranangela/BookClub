@@ -17,7 +17,7 @@ describe 'registration workflow' do
     fill_in :user_username, with: username
     fill_in :user_password, with: '12345'
 
-    click_on 'Create User'
+    click_on 'Create Member'
 
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome, #{username}")
