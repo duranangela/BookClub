@@ -13,6 +13,7 @@
       <h3><%= link_to 'See All Authors', authors_path %></h3>
       <h3><%= link_to 'See All Books', books_path %></h3>
       <% if current_user %>
+        <h3><%= link_to 'See your reviews', user_path(current_user) %></h3>
         <h3><%= link_to 'Log Out', logout_path %></h3>
       <% else %>
         <h3><%= link_to 'Sign up to be a Member', new_user_path %></h3>
