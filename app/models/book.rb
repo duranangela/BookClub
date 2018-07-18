@@ -10,4 +10,7 @@ class Book < ApplicationRecord
     order('title ASC')
   end
 
+  def avg_rating
+    reviews.average(:rating)
+  end
 end

@@ -1,4 +1,7 @@
 <%= image_tag(@book.image, size: '100x150', alt: 'not_available.png') %>
+  <% if @book.avg_rating != nil %>
+    <h2>Average Rating: <%= @book.avg_rating %></h2>
+  <% end %>
 <h2><%= @book.title %> - <%= @book.year %></h2>
 <p><%= link_to "See all books by #{@book.author.name}", author_path(@book.author) %></p><br>
 
