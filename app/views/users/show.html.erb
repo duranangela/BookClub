@@ -7,9 +7,10 @@
     <p><%= "Your review of #{review.book.title}:" %></p>
     <p>Rating: <%= review.rating %></p>
     <p>Comment: <%= review.comment %></p>
-    <p>Created_at: <%= review.created_at %></p><br>
+    <p>Created_at: <%= review.created_at %></p>
+    <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p><br>
   <% end %>
-  
+
 <% else %>
   <%= render file:'/public/404' %>
 <% end %>

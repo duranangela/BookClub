@@ -4,9 +4,9 @@
 
 <% if current_user && current_admin? %>
   <p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
-  <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p>
+  <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p><br>
 <% elsif current_user %>
-  <p><%= link_to 'Write a Review', new_book_review_path(@book) %></p>
+  <p><%= link_to 'Write a Review', new_book_review_path(@book) %></p><br>
 <% end %>
 
 
@@ -15,5 +15,8 @@
   <p>Rating: <%= review.rating %></p>
   <p>Comment: <%= review.comment %></p>
   <p>By: <%= review.user.username %></p>
-  <p><%= review.created_at %></p><br>
+  <p><%= review.created_at %></p>
+  <% if current_user && current_admin? %>
+    <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
+  <% end %><br>
 <% end %>
