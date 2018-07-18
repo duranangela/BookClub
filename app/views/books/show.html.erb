@@ -1,5 +1,5 @@
 <%= image_tag(@book.image, size: '100x150', alt: 'not_available.png') %>
-<h2><%= @book.title %>, <%= @book.year %></h2>
+<h2><%= @book.title %> - <%= @book.year %></h2>
 <p><%= link_to "See all books by #{@book.author.name}", author_path(@book.author) %></p><br>
 
 <% if current_user && current_admin? %>
@@ -10,4 +10,5 @@
 <% @reviews.each do |review| %>
   <p>Rating: <%= review.rating %></p>
   <p>Comment: <%= review.comment %></p>
+  <p>By: <%= review.user.username %></p>
 <% end %>

@@ -13,7 +13,9 @@ describe 'visitor visits book show page' do
 
     expect(page).to have_content(review1.rating)
     expect(page).to have_content(review1.comment)
+    expect(page).to have_content(review1.user.username)
     expect(page).to have_content(review2.rating)
     expect(page).to have_content(review2.comment)
+    expect(page).to have_content(review2.user.username)
   end
 end
