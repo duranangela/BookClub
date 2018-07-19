@@ -13,7 +13,7 @@
       <p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
       <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p><br>
     <% elsif current_user %>
-      <p><%= link_to 'Write a Review', new_book_review_path(@book) %></p><br>
+      <h2><%= link_to 'Write a Review', new_book_review_path(@book) %></h2><br>
     <% end %>
   </div>
 
