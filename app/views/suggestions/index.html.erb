@@ -8,5 +8,7 @@
       <%= suggestion.comment %><br>
       from: <%= suggestion.user.username %><br><br>
     <% end %>
+  <% else %>
+    <%= render file:'/public/404' %>
   <% end %>
 </section>
