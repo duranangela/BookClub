@@ -1,12 +1,12 @@
 <section>
   <% if current_user && current_admin? %>
-    <h2>All suggestions: please add to database<h2>
+    <h2>All suggestions: please add to database and then delete each suggestion<h2>
     <% @suggestions.each do |suggestion| %>
-      <%= suggestion.author %><br>
-      <%= suggestion.title %><br>
-      <%= suggestion.rating %><br>
-      <%= suggestion.comment %><br>
-      from: <%= suggestion.user.username %><br>
+      Suggestion from: <%= suggestion.user.username %><br>
+      Author: <%= suggestion.author %><br>
+      Title: <%= suggestion.title %><br>
+      Rating: <%= suggestion.rating %><br>
+      Comment: <%= suggestion.comment %><br>
       <p><%= link_to "Delete Suggestion", user_suggestion_path(current_user, suggestion), method: 'delete' %></p><br><br>
     <% end %>
   <% else %>
