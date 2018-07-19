@@ -11,7 +11,7 @@ describe 'only admin can create book' do
       book_year = 1988
 
       visit author_path(author)
-      click_on "Create a New Book by #{author.name}"
+      click_on "Create a New Book by #{author.name_switch}"
 
       expect(current_path).to eq(new_author_book_path(author))
 

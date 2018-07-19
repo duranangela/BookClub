@@ -5,29 +5,34 @@
     <% if @book.avg_rating != nil %>
       <h3>Average Rating: <%= @book.avg_rating %></h3>
     <% end %>
-    <h3><%= link_to "See all books by #{@book.author.name}", author_path(@book.author) %></h3>
+    <h3><%= link_to "See all books by #{@book.author.name_switch}", author_path(@book.author) %></h3>
   </div>
 
   <div class='authors'>
     <% if current_user && current_admin? %>
       <p><%= link_to 'Edit Book', edit_author_book_path(@book.author, @book) %></p>
       <p><%= link_to "Delete Book", author_book_path(@book.author, @book), method: 'delete' %></p><br>
+      <h2><%= link_to 'Write a Review', new_book_review_path(@book) %></h2><br>
     <% elsif current_user %>
       <h2><%= link_to 'Write a Review', new_book_review_path(@book) %></h2><br>
     <% end %>
   </div>
 
   <div class='reviews'>
-    <h3>Reviews (Sign in to leave a review!)</h3>
-    <% @reviews.each do |review| %>
-      Rating: <%= review.rating %></br>
-      Comment: <%= review.comment %></br>
-      By: <%= review.user.username %></br>
-      <%= review.time %></br>
-      <% if current_user && current_admin? %>
-        <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
-        <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>
-      <% end %><br>
+    <% if @reviews == [] %>
+      <h3>No reviews yet - Sign in to leave a review!</h3>
+    <% else %>
+      <h3>Reviews (Sign in to leave a review!)</h3>
+      <% @reviews.each do |review| %>
+        Rating: <%= review.rating %> out of 5</br>
+        Comment: <%= review.comment %></br>
+        By: <%= review.user.username %></br>
+        <%= review.time %></br>
+        <% if current_user && current_admin? %>
+          <p><%= link_to 'Edit Review', edit_book_review_path(@book, review) %></p>
+          <p><%= link_to 'Delete Review', book_review_path(@book, review), method: 'delete' %></p>
+        <% end %><br>
+      <% end %>
     <% end %>
   </div>
 </section>

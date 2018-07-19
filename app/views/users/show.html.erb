@@ -7,9 +7,9 @@
         <h2>Your reviews</h2>
         <% @reviews.each do |review| %>
           <h3>Your review of <%= link_to review.book.title, author_book_path(review.book.author, review.book) %>: </h3>
-          Rating: <%= review.rating %><br>
+          Rating: <%= review.rating %> out of 5<br>
           Comment: <%= review.comment %></br>
-          Created at: <%= review.time %></br>
+          Created on: <%= review.time %></br>
           <div class='links'>
             <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
             <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>

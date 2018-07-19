@@ -6,6 +6,6 @@ class Review < ApplicationRecord
   validates_presence_of :rating, :comment
 
   def time
-    created_at.strftime('%m-%e-%y %H:%M')
+    created_at.strftime('%b %d, %Y')
   end
 end

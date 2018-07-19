@@ -3,9 +3,9 @@
 
   <% @books.each do |book| %>
     <div class='book'>
-      <%= image_tag(book.image, size: '125x175', alt: 'not_available.png') %>
+      <%= link_to (image_tag(book.image, size: '125x175', alt: 'not_available.png')), author_book_path(book.author, book) %>
       <h2><%= link_to book.title, author_book_path(book.author, book) %></h2>
-      <h3>by <%= link_to book.author.name, author_path(book.author) %></h3>
+      <h3>by <%= link_to book.author.name_switch, author_path(book.author) %></h3>
       <% if book.avg_rating != nil %>
         <h3>Average Rating: <%= book.avg_rating %></h3>
       <% end %>

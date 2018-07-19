@@ -7,4 +7,9 @@ class Author < ApplicationRecord
   def self.alpha_order
     order('name ASC')
   end
+
+  def name_switch
+    name.split(',').rotate(1).join(' ')
+  end
+
 end

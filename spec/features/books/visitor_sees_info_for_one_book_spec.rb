@@ -14,7 +14,7 @@ describe 'visitor visits book show page' do
     expect(page).to have_content(book.title)
     expect(page).to have_content(book.year)
 
-    click_on author.name
+    click_on author.name_switch
 
     expect(current_path).to eq(author_path(author))
   end

@@ -31,7 +31,7 @@ header img {
 #header a{
   float: right;
   color: white;
-  padding-right: 20px;
+  padding-right: 100px;
 }
 
 #header a:hover {
@@ -50,8 +50,13 @@ nav h3 {
 }
 
 section {
-  background-color: #C5FFC7;
-  padding: 30px;
+  background-color: #c5ffc7;
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  padding-left: 100px;
+}
+
+.welcome1 {
+  padding-bottom: 20px;
 }
 
 .welcome1 img {
@@ -61,10 +66,12 @@ section {
 .welcome1 h3 {
   float: center;
   padding-top: 30px;
+  font-size: 50px;
 }
 
 .welcome2 img {
   float: right;
+  padding-left: 20px;
 }
 
 .title {
@@ -73,8 +80,14 @@ section {
 }
 
 .grid {
+  margin-left: 200px;
+  margin-right: 200px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-items {
+  width: 200px;
 }
 
 .book {
@@ -132,4 +145,12 @@ section {
 
 .form input[type=submit]:hover {
   background-color: #9ECC9F;
+}
+.form input, textarea {
+  font-size: 16px;
+}
+
+.form input, select {
+  height: 30px;
+  font-size: 16px;
 }
