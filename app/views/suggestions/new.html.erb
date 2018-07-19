@@ -1,0 +1,8 @@
+<section>
+  <% if current_user %>
+    <h2 class='title'>Book Suggestion by <%= current_user.username %></h2>
+    <%= render partial: 'form' %>
+  <% else %>
+    <%= render file:'/public/404' %>
+  <% end %>
+</section>

@@ -2,18 +2,35 @@
   <% if current_user %>
     <h1 class='title'>Welcome, <%= current_user.username %>!</h1>
 
-    <div class='reviews'>
-      <!-- <h2>Your reviews:</h2><br> -->
-      <% @reviews.each do |review| %>
-        <h3>Your review of <%= link_to review.book.title, author_book_path(review.book.author, review.book) %>: </h3>
-        <h3>Rating: <%= review.rating %></h3>
-        <h3>Comment: <%= review.comment %></h3>
-        <h3>Created at: <%= review.time %></h3>
-        <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
-        <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
-      <% end %>
-    </div>
+    <div class='user-stuff'>
+      <div>
+        <h2>Your reviews</h2>
+        <% @reviews.each do |review| %>
+          <h3>Your review of <%= link_to review.book.title, author_book_path(review.book.author, review.book) %>: </h3>
+          Rating: <%= review.rating %><br>
+          Comment: <%= review.comment %></br>
+          Created at: <%= review.time %></br>
+          <div class='links'>
+            <p><%= link_to 'Edit Review', edit_book_review_path(review.book, review) %></p>
+            <p><%= link_to 'Delete Review', book_review_path(review.book, review), method: 'delete' %></p><br>
+          </div>
+        <% end %>
+      </div>
 
+      <div>
+        <% if current_admin? %>
+          <p><%= link_to 'See all suggestions', suggestions_path %></p>
+        <% end %>
+        <h2><%= link_to 'Make a Book Suggestion', new_user_suggestion_path(current_user) %></h2>
+        <h3>Your Suggestions:</h3>
+        <% @suggestions.each do |suggestion| %>
+          Author: <%= suggestion.author %></br>
+          Title: <%= suggestion.title %></br>
+          Rating: <%= suggestion.rating %></br>
+          Comment: <%= suggestion.comment %></br><br>
+        <% end %>
+      </div>
+    </div>
   <% else %>
     <%= render file:'/public/404' %>
   <% end %>

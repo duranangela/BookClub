@@ -1,0 +1,15 @@
+<section>
+  <% if current_user && current_admin? %>
+    <h2>All suggestions: please add to database<h2>
+    <% @suggestions.each do |suggestion| %>
+      <%= suggestion.author %><br>
+      <%= suggestion.title %><br>
+      <%= suggestion.rating %><br>
+      <%= suggestion.comment %><br>
+      from: <%= suggestion.user.username %><br>
+      <p><%= link_to "Delete Suggestion", user_suggestion_path(current_user, suggestion), method: 'delete' %></p><br><br>
+    <% end %>
+  <% else %>
+    <%= render file:'/public/404' %>
+  <% end %>
+</section>

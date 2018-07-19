@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @reviews = @user.order_reviews
+    @suggestions = @user.suggestions
   end
 
   def create
