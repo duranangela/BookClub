@@ -6,7 +6,8 @@
       <%= suggestion.title %><br>
       <%= suggestion.rating %><br>
       <%= suggestion.comment %><br>
-      from: <%= suggestion.user.username %><br><br>
+      from: <%= suggestion.user.username %><br>
+      <p><%= link_to "Delete Suggestion", user_suggestion_path(current_user, suggestion), method: 'delete' %></p><br><br>
     <% end %>
   <% else %>
     <%= render file:'/public/404' %>

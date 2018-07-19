@@ -19,6 +19,13 @@ class SuggestionsController < ApplicationController
     end
   end
 
+  def destroy
+    suggestion = Suggestion.find(params[:id])
+    suggestion.destroy
+
+    redirect_to suggestions_path
+  end
+
   private
 
   def suggestion_params
